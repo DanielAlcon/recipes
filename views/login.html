@@ -1,0 +1,41 @@
+<div class="container login">
+	<h2><strong>Google login is the only one working</strong></h2>
+	<form class="form-signin">
+		<h2 class="form-signin-heading">Please sign in</h2>
+		<label for="inputEmail" class="sr-only">Email address</label>
+		<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+		<label for="inputPassword" class="sr-only">Password</label>
+		<input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+		<div class="checkbox">
+			<label>
+				<input type="checkbox" value="remember-me"> Remember me
+			</label>
+		</div>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+	</form>
+
+	<wts-google-login>
+		<div>
+			<h2>Please login to access our site</h2>
+			<div class="row">
+				<div class="col-md-3 col-sm-6">
+					<h6 >Login with Google</h6>
+					<div class="g-signin2" data-onsuccess="onSignIn"></div>
+					<!-- <a href="#" onclick="signOut();">Sign out</a>		 -->	
+				</div>
+				<div class="col-md-3 col-sm-6">				
+					<h6>Login with Facebook</h6>
+					<button id="facebook">Facebook</button>				
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<h6>Login with Twitter</h6>
+					<button id="twitter">Twitter</button>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<h6>Login with Microsoft</h6>
+					<button id="microsoft">Microsoft</button>
+				</div>
+			</div>
+		</div>
+	</wts-google-login>
+</div>

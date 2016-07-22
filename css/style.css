@@ -1,0 +1,37 @@
+body {
+	background: url("../img/A535FDBB21.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 100%;
+}
+
+/*body {
+	background-color: rgba(0, 0, 0, 0.5);
+	background-size: 100%;
+	height: 100%
+}*/
+
+.input-group.panel.ng-scope.ng-isolate-scope.panel-default {
+    width: 100%;
+}
+
+#brand-logo {
+	
+}
+
+.login {
+	color: white;
+}
+
+.card {
+	color: white;
+}
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	background-color: #f8f8f8;
+}
