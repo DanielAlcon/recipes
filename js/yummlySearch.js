@@ -7,8 +7,6 @@ $("#searchButton").on("click", function(e){
 	search();
 	console.log("search button ok");
 	console.log(searchText);
-/*	search();
-$("#searchRecipe").val("");*/
 });
 
 function searchOnEnter(e){
@@ -70,17 +68,13 @@ function successFunction(data){
 
 function appendRecipesList(recipes){
 	for (var j=0; j<recipes.length; j++){
-		var ingredients = recipes[j].ingredients;
+		// var ingredients = recipes[j].ingredients;
 		var cookingTime = recipes[j].totalTimeInSeconds;
 		cookingTime = timeToMinutesHours(cookingTime)
-		var recipeCard = '<div class="recipe" id="' + recipes[j].id + '"><h4 class="name">' + recipes[j].recipeName + '</h4><img src="' + recipes[j].smallImageUrls[0] + '"><h6 class="recipeIngredients">Ingredients:</h6><ul class="ingredientsList"></ul><p><span> Time: ' + cookingTime + '.</span><span> Course: ' + recipes[j].attributes.course + '.</span><span> Rating: ' + recipes[j].rating + ' </span></p> <a class="btn btn-info" href="#/recipe" role="button">More info</a> </div>';
+		var recipeCard = '<div class="recipe col-md-4" id="' + recipes[j].id + '"><h4 class="name">' + recipes[j].recipeName + '</h4><img src="' + recipes[j].smallImageUrls[0] + '"><p><span> Time: ' + cookingTime + '.</span></p> <a class="btn btn-info" href="#/recipe" role="button">More info</a> </div>';
 		$('#searchResults').append(recipeCard);
 	}
-	for (var k=0; k<ingredients.length; k++) {
-		var ingredient = ingredients[k].charAt(0).toUpperCase() + ingredients[k].slice(1);
-		var ingredientLi = '<li>' + ingredient + '</li>';
-		$('ul.ingredientsList').append(ingredientLi);
-	}
+	$("#searchRecipe").val("");
 }
 
 function timeToMinutesHours(timeInSeconds){
