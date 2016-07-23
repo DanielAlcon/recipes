@@ -5,7 +5,12 @@ function onSignIn(googleUser) {
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail());
   // comprobar ID, != undefined o null, usar location="la rutaque yo quiera"
-  var user = profile.getEmail();
+  var user = {
+    email: profile.getEmail(),
+    image: profile.getImageUrl(),
+    favsRecipes: ""
+  };    
+  window.localStorage.setItem("user",JSON.stringify(user));
   if (user != undefined) {
     window.location.href="#/";
     //show botón de signout
@@ -15,6 +20,7 @@ function onSignIn(googleUser) {
 }
 
 function signOut() {
+  window.localStorage.removeItem("user");
   var auth2 = gapi.auth2.getAuthInstance();
   auth2.signOut().then(function () {
     console.log('User signed out.');

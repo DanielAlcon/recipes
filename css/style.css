@@ -25,7 +25,7 @@ body {
 	color: white;
 }
 
-div.recipe {
+/*div.recipe {
     background-color: white;
     display: inline-block;
     margin: 1em;
@@ -34,7 +34,7 @@ div.recipe {
     padding: 2em;
     border-radius: 5em;
     text-align: center;
-}
+}*/
 .footer {
 	position: absolute;
 	bottom: 0;

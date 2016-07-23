@@ -1,51 +1,53 @@
 <wtsSearchFilters class="main-search" ng-controller="AccordionCtrl">
 	<div class="row search-box">
-		<div></div>
-		<uib-accordion class="col-md-4 col-sm-4" close-others="oneAtATime">
-			<uib-accordion-group heading="Pictures" is-open="true">
-				<label><input type="checkbox" id="pictures-checkbox" checked="checked">Only with pictures</label>
-			</uib-accordion-group>	<!-- end of pictures -->
-			<uib-accordion-group class="input-group" heading="With ingredients">
-				<input type="text" class="form-control" id="included-ingredients" placeholder="ingredients separated by space" aria-describedby="basic-addon1">
-			</uib-accordion-group><!-- end of with ingredients -->
-			<uib-accordion-group class="input-group" heading="Without ingredients">
-				<input type="text" class="form-control" id="excluded-ingredients" placeholder="ingredients separated by space" aria-describedby="basic-addon1">
-			</uib-accordion-group><!-- end of without ingredients -->
-			<uib-accordion-group class="filters" id="allergies" heading="Allergies">
 
-				<div class="checkbox-allergies" id="dairy">
-					<label><input type="checkbox" class="allergies" value="396^Dairy-Free"> Dairy</label>
-				</div>
-				<div class="checkbox-allergies" id="egg">
-					<label><input type="checkbox" class="allergies" value="397^Egg-Free"> Egg</label>
-				</div>
-				<div class="checkbox-allergies" id="gluten">
-					<label><input type="checkbox" class="allergies" value="393^Gluten-Free"> Gluten</label>
-				</div>
-				<div class="checkbox-allergies" id="peanut">
-					<label><input type="checkbox" class="allergies" value="394^Peanut-Free"> Peanut</label>
-				</div>
-				<div class="checkbox-allergies" id="seafood">
-					<label><input type="checkbox" class="allergies" value="398^Seafood-Free"> Seafood</label>
-				</div>
-				<div class="checkbox-allergies" id="sesame">
-					<label><input type="checkbox" class="allergies" value="399^Sesame-Free"> Sesame</label>
-				</div>
-				<div class="checkbox-allergies" id="soy">
-					<label><input type="checkbox" class="allergies" value="400^Soy-Free"> Soy</label>
-				</div>			
-				<div class="checkbox-allergies" id="sulfite">
-					<label><input type="checkbox" class="allergies" value="401^Sulfite-Free"> Sulfite</label>
-				</div>			
-				<div class="checkbox-allergies" id="tree-nut">
-					<label><input type="checkbox" class="allergies" value="395^Tree Nut-Free"> Tree Nut</label>
-				</div>			
-				<div class="checkbox-allergies" id="wheat">
-					<label><input type="checkbox" class="allergies" value="392^Wheat-Free"> Wheat</label>				
-				</div>
-			</uib-accordion-group> <!-- end of allergies -->
+			<uib-accordion class="col-md-3 col-sm-3" close-others="oneAtATime">
+				<uib-accordion-group heading="Pictures" is-open="true">
+					<label><input type="checkbox" id="pictures-checkbox" checked="checked">Only with pictures</label>
+				</uib-accordion-group>	<!-- end of pictures -->
+				<uib-accordion-group class="input-group" heading="With ingredients">
+					<input type="text" class="form-control" id="included-ingredients" placeholder="ingredients" aria-describedby="basic-addon1">
+					<p class="input-explanation">(separated by space)</p>
+				</uib-accordion-group><!-- end of with ingredients -->
+				<uib-accordion-group class="input-group" heading="Without ingredients">
+					<input type="text" class="form-control" id="excluded-ingredients" placeholder="ingredients" aria-describedby="basic-addon1">
+					<p class="input-explanation">(separated by space)</p>
+				</uib-accordion-group><!-- end of without ingredients -->
+				<uib-accordion-group class="filters" id="allergies" heading="Allergies">
+
+					<div class="checkbox-allergies" id="dairy">
+						<label><input type="checkbox" class="allergies" value="396^Dairy-Free"> Dairy</label>
+					</div>
+					<div class="checkbox-allergies" id="egg">
+						<label><input type="checkbox" class="allergies" value="397^Egg-Free"> Egg</label>
+					</div>
+					<div class="checkbox-allergies" id="gluten">
+						<label><input type="checkbox" class="allergies" value="393^Gluten-Free"> Gluten</label>
+					</div>
+					<div class="checkbox-allergies" id="peanut">
+						<label><input type="checkbox" class="allergies" value="394^Peanut-Free"> Peanut</label>
+					</div>
+					<div class="checkbox-allergies" id="seafood">
+						<label><input type="checkbox" class="allergies" value="398^Seafood-Free"> Seafood</label>
+					</div>
+					<div class="checkbox-allergies" id="sesame">
+						<label><input type="checkbox" class="allergies" value="399^Sesame-Free"> Sesame</label>
+					</div>
+					<div class="checkbox-allergies" id="soy">
+						<label><input type="checkbox" class="allergies" value="400^Soy-Free"> Soy</label>
+					</div>			
+					<div class="checkbox-allergies" id="sulfite">
+						<label><input type="checkbox" class="allergies" value="401^Sulfite-Free"> Sulfite</label>
+					</div>			
+					<div class="checkbox-allergies" id="tree-nut">
+						<label><input type="checkbox" class="allergies" value="395^Tree Nut-Free"> Tree Nut</label>
+					</div>			
+					<div class="checkbox-allergies" id="wheat">
+						<label><input type="checkbox" class="allergies" value="392^Wheat-Free"> Wheat</label>				
+					</div>
+				</uib-accordion-group> <!-- end of allergies -->
 <!-- 			<uib-accordion-group id="cooking-time" heading="Cooking time" >
-			<form name="myForm" ng-controller="ExampleController"> 				
+				<form name="myForm" ng-controller="ExampleController"> 				
 					<div class="radio-time" id="dairy">
 						<label><input type="radio" class="time" value="396^Dairy-Free"> &lt;5minutes</label>
 					</div>
@@ -262,7 +264,7 @@
 					</div>
 				</uib-accordion-group> <!-- end of excluded-cuisines -->
 			</uib-accordion><!-- end filters-->
-			<div class="col-md-8 col-sm-8">
+			<div class="col-md-3 col-sm-3">
 				<div class="input-group">
 					<input type="text" class="form-control" placeholder="Search for a recipe" id="searchRecipe">
 					<span class="input-group-btn">
@@ -271,8 +273,11 @@
 				</div><!-- /input-group -->
 				<div id="searchResults">					
 				</div>
-			</div><!-- end col-md-8 search box-->
-		</div>
+			</div><!-- end col-md-4 search box-->
+			<div class="col-md-6 col-sm-6 recipe">
+				
+			</div>
+
 <!-- 		<script type="text/javascript">
 			var searchQuery;
 			var searchEndpoint = "http://api.yummly.com/v1/api/recipes?&q="
