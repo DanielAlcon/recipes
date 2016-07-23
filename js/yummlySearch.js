@@ -1,9 +1,18 @@
 var searchQuery;
 var searchEndpoint = "http://api.yummly.com/v1/api/recipes?&q="
 var recipes = [];
+
 $("#searchButton").on("click", function(e){
 	e.preventDefault();
 	searchText = encodeURI($("#searchRecipe").val());
+	search();
+	console.log("search button ok");
+	console.log(searchText);
+});
+
+$(".recipeInfo").on("click", function(e){
+	e.preventDefault();
+	recipeId = encodeURI($(".recipe.id"));
 	search();
 	console.log("search button ok");
 	console.log(searchText);
@@ -71,7 +80,7 @@ function appendRecipesList(recipes){
 		// var ingredients = recipes[j].ingredients;
 		var cookingTime = recipes[j].totalTimeInSeconds;
 		cookingTime = timeToMinutesHours(cookingTime)
-		var recipeCard = '<div class="recipe col-md-4" id="' + recipes[j].id + '"><h4 class="name">' + recipes[j].recipeName + '</h4><img src="' + recipes[j].smallImageUrls[0] + '"><p><span> Time: ' + cookingTime + '.</span></p> <a class="btn btn-info" href="#/recipe" role="button">More info</a> </div>';
+		var recipeCard = '<div class="recipe col-md-4"><h4 class="name">' + recipes[j].recipeName + '</h4><img src="' + recipes[j].smallImageUrls[0] + '"><p><span> Time: ' + cookingTime + '.</span></p> <a class="btn btn-info recipeInfo" href="#/recipe" id="' + recipes[j].id +'"role="button">More info</a> </div>';
 		$('#searchResults').append(recipeCard);
 	}
 	$("#searchRecipe").val("");
