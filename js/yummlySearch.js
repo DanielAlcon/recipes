@@ -66,20 +66,18 @@ function successFunction(data){
 	for (var i=0; i<data.matches.length; i++) {
 		recipes.push(data.matches[i]);
 	}
-	attribution = data.attribution.html;
 	appendRecipesList(recipes);
 }
 
 function appendRecipesList(recipes){
 
 	for (var j=0; j<recipes.length; j++){
-		var recipeCard = '<div class="recipe col-md-4"><h5 class="name">' + 
-		recipes[j].recipeName + '</h5><h6>' + recipes[j].sourceDisplayName + '</h6><img class="recipe-card-img" src="' + 
+		var recipeCard = '<div class="recipe col-md-6"><h5 class="name">' + 
+		recipes[j].recipeName + '</h5><h6 class="recipeSource">' + recipes[j].sourceDisplayName + '</h6><img class="recipe-card-img" src="' + 
 		recipes[j].smallImageUrls[0] + '"><a class="btn btn-info recipeInfo" href="#/" id="' 
 		+ recipes[j].id +'"role="button">More info</a> </div>';
 		$('#searchResults').append(recipeCard);
 	}
-	$('#searchResults').append(attribution);
 	$("#searchRecipe").val("");
 	loadjscssfile("./js/recipeMoreInfo.js", "js");
 }
