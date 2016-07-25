@@ -1,10 +1,10 @@
 var recipeId = "";
 var recipe;
-var searchRecipeAPI = 'http://api.yummly.com/v1/api/recipe/';
 
 $(".recipeInfo").on("click", function(e){
 	e.preventDefault();
 	recipeId = this.id;
+	$('.recipe-more-info').empty();
 	recipeMoreInfo();
 });
 
@@ -22,9 +22,9 @@ function ajaxRequest(url, func1, func2){
 }
 
 function recipeMoreInfo(){
-	searchRecipeAPI = searchRecipeAPI + recipeId + '?';
+	var searchRecipeAPI = 'http://api.yummly.com/v1/api/recipe/' + recipeId + '?';
 	var searchLog = function(){
-		console.log("searching recipe");
+		console.log("searching" + searchRecipeAPI);
 	};
 	ajaxRequest(searchRecipeAPI, searchLog, successRecipeInfo);
 }
@@ -35,46 +35,38 @@ function successRecipeInfo(data){
 }
 
 function appendRecipesList(recipe){
+
 	var attributionHtml = recipe.attribution.html;
-	var course = recipe.attributes.course; // hecho
-	var cuisine = recipe.attributes.cuisine; // hecho
-	var image = recipe.images[0].hostedLargeUrl; // hecho
+	var course = recipe.attributes.course;
+	var cuisine = recipe.attributes.cuisine;
+	var image = recipe.images[0].hostedLargeUrl;
 	var ingredients = recipe.ingredientLines;
-	var name = recipe.name; // hecho
+	var name = recipe.name;
 	var rating = recipe.rating;
 	var servings = recipe.yield;
 	var sourceDisplayName = recipe.source.sourceDisplayName;
 	var sourceRecipeUrl = recipe.source.sourceRecipeUrl;
 	var sourceSiteUrl = recipe.source.sourceSiteUrl;
-	var totalTime = recipe.totalTime; // hecho
-	var star = "&#8902";
-
+	var totalTime = recipe.totalTime;
+	
 	var recipeInfo = '<div id="recipeInfo"><h2 id="recipeInfoName">' + 
 	name + '</h2><img src="' + image + '"><p><span class="recipeInfoAttributes">' 
 	+ cuisine +	'.<span></span> ' + servings + 
 	' servings.</span><span> Cooking time: ' + totalTime + 
-	'</span></p><ul class="recipeInfoIngredients"></ul>' + 
-	'<'
+	'</span><span>' + course + '</span></p><ul class="recipeInfoIngredients"></ul>' 
+	+ '<p>' + rating + ' <span class="recipeInfoRating"></span></p>' +
+	'<p>Source: ' + sourceDisplayName + '</p><a href="'+sourceRecipeUrl+
+	'">' + sourceRecipeUrl + '</a></div>';
 	
-	// cerrar el div, , 
+	$('.recipe-more-info').append(recipeInfo);
 
-	// hacer un for para append ingredients
+	for (var i = rating; i>0 ; i--){
+		$('span.recipeInfoRating').append('<i class="fa fa-star" aria-hidden="true"></i>');
+	}
 
-	console.log('servings:'+ servings);
-	console.log('time:' +totalTime);
-	console.log('image' + image);
-	console.log('name' + name);
-	console.log('sourceDisplayName:' +sourceDisplayName);
-	console.log('sourceSiteUrl' + sourceSiteUrl);
-	console.log('sourceRecipeUrl' + sourceRecipeUrl);
-	console.log('ingredients' +ingredients);
-	console.log('attributionHtml' + attributionHtml);
-	console.log('course'+course);
-	console.log('cuisine'+cuisine);
-	console.log('rating' + rating);
-	//
-	// $('#searchResults').append(recipeCard);
-	
+	for (var j = 0; j<recipe.ingredientLines.length; j++) {
+		$('.recipeInfoIngredients').append('<li>' + recipe.ingredientLines[j] + '</li>');
+	}	
 }
 
 function failFunction(request, textStatus, errorThrown) {
