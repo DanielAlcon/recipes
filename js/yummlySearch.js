@@ -12,7 +12,7 @@ $("#searchButton").on("click", function(e){
 	console.log(searchText);
 });
 
-function searchOnEnter(e){
+/*function searchOnEnter(e){
 	e = e || window.event;
 	if (e.keyCode == 13)
 	{
@@ -21,7 +21,7 @@ function searchOnEnter(e){
 		return false;
 	}
 	return true;
-}
+}*/
 
 function ajaxRequest(url, func1, func2){
 	$.ajax({
@@ -73,34 +73,16 @@ function successFunction(data){
 function appendRecipesList(recipes){
 
 	for (var j=0; j<recipes.length; j++){
-		// var ingredients = recipes[j].ingredients;
-		//var cookingTime = recipes[j].totalTimeInSeconds;
-		//cookingTime = timeToMinutesHours(cookingTime);
-		var recipeCard = '<div class="recipe col-md-4"><h4 class="name">' + 
-		recipes[j].recipeName + '</h4><h6>' + recipes[j].sourceDisplayName + '</h6><img src="' + 
+		var recipeCard = '<div class="recipe col-md-4"><h5 class="name">' + 
+		recipes[j].recipeName + '</h5><h6>' + recipes[j].sourceDisplayName + '</h6><img class="recipe-card-img" src="' + 
 		recipes[j].smallImageUrls[0] + '"><a class="btn btn-info recipeInfo" href="#/" id="' 
 		+ recipes[j].id +'"role="button">More info</a> </div>';
-		//<p>Time: ' + cookingTime + '.</p>
 		$('#searchResults').append(recipeCard);
 	}
 	$('#searchResults').append(attribution);
 	$("#searchRecipe").val("");
 	loadjscssfile("./js/recipeMoreInfo.js", "js");
 }
-
-/*function timeToMinutesHours(timeInSeconds){
-	var time = Math.floor(timeInSeconds / 60);
-	if (time >= 60) {
-		time = time / 60;
-		if(time = 1) {
-			return time + ' hour';
-		} else {
-			return time + ' hours';
-		}
-	} else {
-		return time + ' minutes';
-	}
-}*/
 
 function withPictures(){
 	if ($('#pictures') != undefined) {
@@ -114,7 +96,6 @@ function withPictures(){
 
 function includeIngredients(){
 	if ($('#included-ingredients').val() != ""){
-  	// split by spaces  $("#searchquery").text().split(/ +/);
   	var ingredientsToInclude = $('#included-ingredients').val();
   	ingredientsToInclude = ingredientsToInclude.split(" ");
   	for (var i = 0; i<ingredientsToInclude.length; i++){
@@ -150,10 +131,6 @@ function allergies() {
 	}
 	console.log('searching for the following allergies' + allergies);
 }
-
-/*function cookingTime(){
-
-}*/
 
 function diets(){
 	var diets =[];
