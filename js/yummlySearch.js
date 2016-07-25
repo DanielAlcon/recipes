@@ -2,6 +2,7 @@ var searchQuery;
 var searchEndpoint = "http://api.yummly.com/v1/api/recipes?&q="
 var recipes = [];
 var searchText;
+var attribution;
 
 $("#searchButton").on("click", function(e){
 	e.preventDefault();
@@ -65,34 +66,41 @@ function successFunction(data){
 	for (var i=0; i<data.matches.length; i++) {
 		recipes.push(data.matches[i]);
 	}
+	attribution = data.attribution.html;
 	appendRecipesList(recipes);
 }
 
 function appendRecipesList(recipes){
+
 	for (var j=0; j<recipes.length; j++){
 		// var ingredients = recipes[j].ingredients;
-		var cookingTime = recipes[j].totalTimeInSeconds;
-		cookingTime = timeToMinutesHours(cookingTime)
-		var recipeCard = '<div class="recipe col-md-4"><h4 class="name">' + recipes[j].recipeName + '</h4><img src="' + recipes[j].smallImageUrls[0] + '"><p>Time: ' + cookingTime + '.</p> <a class="btn btn-info recipeInfo" href="#/" id="' + recipes[j].id +'"role="button">More info</a> </div>';
+		//var cookingTime = recipes[j].totalTimeInSeconds;
+		//cookingTime = timeToMinutesHours(cookingTime);
+		var recipeCard = '<div class="recipe col-md-4"><h4 class="name">' + 
+		recipes[j].recipeName + '</h4><h6>' + recipes[j].sourceDisplayName + '</h6><img src="' + 
+		recipes[j].smallImageUrls[0] + '"><a class="btn btn-info recipeInfo" href="#/" id="' 
+		+ recipes[j].id +'"role="button">More info</a> </div>';
+		//<p>Time: ' + cookingTime + '.</p>
 		$('#searchResults').append(recipeCard);
 	}
+	$('#searchResults').append(attribution);
 	$("#searchRecipe").val("");
 	loadjscssfile("./js/recipeMoreInfo.js", "js");
 }
 
-function timeToMinutesHours(timeInSeconds){
+/*function timeToMinutesHours(timeInSeconds){
 	var time = Math.floor(timeInSeconds / 60);
 	if (time >= 60) {
 		time = time / 60;
 		if(time = 1) {
-			return time + ' hour'
+			return time + ' hour';
 		} else {
 			return time + ' hours';
 		}
 	} else {
 		return time + ' minutes';
 	}
-}
+}*/
 
 function withPictures(){
 	if ($('#pictures') != undefined) {
