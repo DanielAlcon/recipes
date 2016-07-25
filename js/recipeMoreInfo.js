@@ -35,39 +35,49 @@ function successRecipeInfo(data){
 }
 
 function appendRecipesList(recipe){
-	var servings = recipe.yield;
-	var totalTime = recipe.totalTime;
-	var image = recipe.images[0].hostedLargeUrl;
-	var name = recipe.name;
-	var sourceDisplayName = recipe.sourceDisplayName;
-	var sourceSiteUrl = recipe.sourceSiteUrl;
-	var sourceRecipeUrl = recipe.sourceRecipeUrl;
-	var ingredients = recipe.ingredientLines;
 	var attributionHtml = recipe.attribution.html;
-	var course = recipe.attributes.course;
-	var cuisine = recipe.attributes.cuisine;
+	var course = recipe.attributes.course; // hecho
+	var cuisine = recipe.attributes.cuisine; // hecho
+	var image = recipe.images[0].hostedLargeUrl; // hecho
+	var ingredients = recipe.ingredientLines;
+	var name = recipe.name; // hecho
 	var rating = recipe.rating;
+	var servings = recipe.yield;
+	var sourceDisplayName = recipe.source.sourceDisplayName;
+	var sourceRecipeUrl = recipe.source.sourceRecipeUrl;
+	var sourceSiteUrl = recipe.source.sourceSiteUrl;
+	var totalTime = recipe.totalTime; // hecho
+	var star = "&#8902";
 
-	console.log(servings);
-	console.log(totalTime);
-	console.log(image);
-	console.log(name);
-	console.log(sourceDisplayName);
-	console.log(sourceSiteUrl);
-	console.log(sourceRecipeUrl);
-	console.log(ingredients);
-	console.log(attributionHtml);
-	console.log(course);
-	console.log(cuisine);
-	console.log(rating);
+	var recipeInfo = '<div id="recipeInfo"><h2 id="recipeInfoName">' + 
+	name + '</h2><img src="' + image + '"><p><span class="recipeInfoAttributes">' 
+	+ cuisine +	'.<span></span> ' + servings + 
+	' servings.</span><span> Cooking time: ' + totalTime + 
+	'</span></p><ul class="recipeInfoIngredients"></ul>' + 
+	'<'
+	
+	// cerrar el div, , 
 
+	// hacer un for para append ingredients
+
+	console.log('servings:'+ servings);
+	console.log('time:' +totalTime);
+	console.log('image' + image);
+	console.log('name' + name);
+	console.log('sourceDisplayName:' +sourceDisplayName);
+	console.log('sourceSiteUrl' + sourceSiteUrl);
+	console.log('sourceRecipeUrl' + sourceRecipeUrl);
+	console.log('ingredients' +ingredients);
+	console.log('attributionHtml' + attributionHtml);
+	console.log('course'+course);
+	console.log('cuisine'+cuisine);
+	console.log('rating' + rating);
+	//
 	// $('#searchResults').append(recipeCard);
 	
 }
 
 function failFunction(request, textStatus, errorThrown) {
-	alert("An error occurred during your request: " + request.status + " " + textStatus + " " + errorThrown);
+	alert("An error occurred during your request: " + request.status + " " + 
+		textStatus + " " + errorThrown);
 }
-
-//minified html
-// '<h3 id="recipeName">name of the recipe</h3><img src="" id="picture"><ul id="ingredients">ingredients</ul>(nutritional values)cooking time<a href="#">link to source recipe. link to source and yummly api imgbutton to add to favourites (localstorage)</a>'
