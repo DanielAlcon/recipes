@@ -72,10 +72,13 @@ function successFunction(data){
 function appendRecipesList(recipes){
 
 	for (var j=0; j<recipes.length; j++){
-		var recipeCard = '<div class="recipe col-md-6"><h5 class="name">' + 
-		recipes[j].recipeName + '</h5><h6 class="recipeSource">' + recipes[j].sourceDisplayName + '</h6><img class="recipe-card-img" src="' + 
-		recipes[j].smallImageUrls[0] + '"><a class="btn btn-info recipeInfo" href="#/" id="' 
-		+ recipes[j].id +'"role="button">More info</a> </div>';
+		var recipeCard = '<div class="recipe col-sm-6 col-md-4"><div class="thumbnail"><img class="img-thumbnail recipe-card-img" src="' + 
+		recipes[j].smallImageUrls[0] + 
+		'"><h5 class="name">' + 
+		recipes[j].recipeName + '</h5><h6 class="recipeSource">By: ' + 
+		recipes[j].sourceDisplayName + 
+		'</h6><p><a class="btn btn-info recipeInfo" href="#/" id="' 
+		+ recipes[j].id +'"role="button">More info</a></p></div></div>';
 		$('#searchResults').append(recipeCard);
 	}
 	$("#searchRecipe").val("");

@@ -1,3 +1,8 @@
+html {
+	position: relative;
+	min-height: 100%;
+}
+
 body {
 	background: url("../img/A535FDBB21.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
@@ -5,45 +10,57 @@ body {
 	-o-background-size: cover;
 	background-size: cover;
 	height: 100%;
+	margin: 0 0 100px; /* bottom = footer height */
 }
 
 .recipe-list {
-    background-color: rgba(0, 0, 0, 0.5);
-    background-size: 100%;
-    height: 100%;
-    border-radius: 5px;
-    color: white;
-    padding: 10px;
+	background-size: 100%;
+	height: 100%;
+	padding: 10px;
 }
 
 div#searchResults {
-    display: inline;
-}
-
-h5.name {
-    text-align: center;
-}
-
-h6.recipeSource {
-    text-align: center;
-}
-
-img.recipe-card-img {
-    margin: 1em;
-}
-
-a.recipeInfo {
-    margin: 1em;
+	display: inline;
 }
 
 .recipe {
-    background-color: rgba(0, 0, 0, 0.7);
-    margin: 22px;
-    border-radius: 5px;
+	margin: 3em;
+	border-radius: 5px;
+	padding: 0em;
+}
+h5.name {
+	text-align: center;
+}
+
+h6.recipeSource {
+	text-align: center;
+}
+
+img.recipe-card-img {
+	margin: 1em;
+}
+
+.col-md-5.col-sm-5.recipe-more-info {
+	background-size: 100%;
+	height: 100%;
+	padding: 10px;
+}
+
+a.recipeInfo {
+	margin: 1em;
+}
+
+.course {
+	font-style: italic;
+}
+
+.description {
+    padding-left: 2em;
+    margin: 1em;
 }
 
 .input-group.panel.ng-scope.ng-isolate-scope.panel-default {
-    width: 100%;
+	width: 100%;
 }
 
 .login {
@@ -59,12 +76,14 @@ a.recipeInfo {
     padding: 2em;
     border-radius: 5em;
     text-align: center;
-}*/
+    }*/
 
-.footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 60px;
-	background-color: #f8f8f8;
-}
+
+    footer {
+    	position: absolute;
+    	left: 0;
+    	bottom: 0;
+    	height: 100px;
+    	width: 100%;
+    	background-color: #f8f8f8;
+    }

@@ -38,7 +38,6 @@ function appendRecipesList(recipe){
 
 	var attributionHtml = recipe.attribution.html;
 	var course = recipe.attributes.course;
-	var cuisine = recipe.attributes.cuisine;
 	var image = recipe.images[0].hostedLargeUrl;
 	var ingredients = recipe.ingredientLines;
 	var name = recipe.name;
@@ -49,18 +48,17 @@ function appendRecipesList(recipe){
 	var sourceSiteUrl = recipe.source.sourceSiteUrl;
 	var totalTime = recipe.totalTime;
 	
-	var recipeInfo = '<div id="recipeInfo"><h2 id="recipeInfoName">' + 
-	name + '</h2><img src="' + image + '"><p><span class="recipeInfoAttributes">' 
-	+ cuisine +	'.<span></span> ' + servings + 
-	' servings.</span><span> Cooking time: ' + totalTime + 
-	'</span><span>' + course + '</span></p><ul class="recipeInfoIngredients"></ul>' 
-	+ '<p>' + rating + ' <span class="recipeInfoRating"></span></p>' +
+	var recipeInfo = '<div id="col-sm-6 col-md-4 recipeInfo"><div class="thumbnail"><h2 id="recipeInfoName">' + 
+	name + '</h2><img class="img-rounded" src="' + image + '"><div class="description"><p></span>Servings: ' + servings + 
+	'.</span><span> Cooking time: ' + totalTime + 
+	'</span>.<span class="course"> ' + course + '</span></p><h5>Ingredients:</h5><ul class="recipeInfoIngredients"></ul>' 
+	+ '<p><span class="recipeInfoRating"></span></p>' +
 	'<p>Source: ' + sourceDisplayName + '</p><a href="'+sourceRecipeUrl+
-	'">' + sourceRecipeUrl + '</a></div>';
+	'">' + sourceRecipeUrl + '</a></div></div></div>';
 	
 	$('.recipe-more-info').append(recipeInfo);
 
-	for (var i = rating; i>0 ; i--){
+	for (var i = 0; i<rating ; i++){
 		$('span.recipeInfoRating').append('<i class="fa fa-star" aria-hidden="true"></i>');
 	}
 
