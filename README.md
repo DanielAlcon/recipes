@@ -1,5 +1,5 @@
 # recipesOfDaMamma
-Final project of the Generation-Sevilla '16 course: Recipes website, in AngularJS.
+Final project of the Generation-Sevilla '16 course: Recipes website.
 
 The project:
 
@@ -17,7 +17,7 @@ The project:
 	- Twitter search to see pictures or comments about the recipe.
 	- Youtube search to see how to's.
 	- 
-
+The project was meant to be done using only AngularJS, but I didn't manage to, and since I had only two weeks, I did it using a bit of AngularJS, Jquery and JS.
 
 This project is part of the Generation Web Development course, promoted by McKinsey Social Initiative in collaboration with EOI Sevilla and Ironhack.
 

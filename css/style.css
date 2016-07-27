@@ -79,11 +79,15 @@ a.recipeInfo {
     }*/
 
 
-    footer {
-    	position: absolute;
-    	left: 0;
-    	bottom: 0;
-    	height: 100px;
-    	width: 100%;
-    	background-color: #f8f8f8;
-    }
+footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 4em;
+	width: 100%;
+	background-color: #f8f8f8;
+}
+
+.attribution {
+    padding-top: 1em;
+}
