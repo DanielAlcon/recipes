@@ -219,14 +219,13 @@
 				</uib-accordion-group> <!-- end of excluded-cuisines -->
 			</uib-accordion><!-- end filters-->
 			<div class="col-md-5 col-sm-5 recipe-list">
-				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Search for a recipe" id="searchRecipe">
+				<form class="input-group">
+					<input type="text" class="form-control" placeholder="Search for a recipe" id="searchRecipe" onkeypress="searchOnEnter(event)">
 					<span class="input-group-btn">
-						<button class="btn btn-default" type="button" id="searchButton">Go!</button>
+						<button class="btn btn-default" type="button" id="searchButton" onclick="doTheSearch()">Go!</button>
 					</span>
 
-				</div><!-- /input-group -->
-				<p>brownie</p>
+				</form><!-- /input-group -->
 				<div class="row" id="searchResults">
 		
 				</div>
@@ -237,5 +236,4 @@
 		<script type="text/javascript-lazy">
 			loadjscssfile("./js/yummlySearch.js", "js");
 		</script>
-	</script>
 </wtsSearchFilters>

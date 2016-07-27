@@ -1,27 +1,28 @@
 var searchQuery;
-var searchEndpoint = "http://api.yummly.com/v1/api/recipes?&q="
+var searchEndpoint = "http://api.yummly.com/v1/api/recipes?&q=";
 var recipes = [];
 var searchText;
 var attribution;
 
-$("#searchButton").on("click", function(e){
-	e.preventDefault();
+function doTheSearch(){
 	searchText = encodeURI($("#searchRecipe").val());
+	recipes = [];
 	searchRecipes();
-	console.log("search button ok");
 	console.log(searchText);
-});
+	$('.recipe-more-info').empty();
+}
 
-/*function searchOnEnter(e){
+function searchOnEnter(e){
 	e = e || window.event;
 	if (e.keyCode == 13)
 	{
 		searchText = encodeURI($("#searchRecipe").val());
+		recipes = [];
 		searchRecipes();
 		return false;
 	}
 	return true;
-}*/
+}
 
 function ajaxRequest(url, func1, func2){
 	$.ajax({
@@ -42,7 +43,7 @@ function searchRecipes(){
 		console.log("searching recipe");
 	};
 	$('#searchResults').empty();
-	recipes = [];
+
 	if (searchText != "") {
 		withPictures();
 		includeIngredients();
@@ -65,7 +66,7 @@ function failFunction(request, textStatus, errorThrown) {
 function successFunction(data){
 	for (var i=0; i<data.matches.length; i++) {
 		recipes.push(data.matches[i]);
-	}
+	};
 	appendRecipesList(recipes);
 }
 
@@ -174,3 +175,4 @@ function excludedCuisines(){
 	}	
 	console.log('searching without the following cuisines' + excludedCuisines);
 }
+
