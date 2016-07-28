@@ -50,6 +50,10 @@ a.recipeInfo {
 	margin: 1em;
 }
 
+#recipeInfoName {
+    text-align: center;
+}
+
 .course {
 	font-style: italic;
 }
@@ -66,17 +70,6 @@ a.recipeInfo {
 .login {
 	color: white;
 }
-
-/*div.recipe {
-    background-color: white;
-    display: inline-block;
-    margin: 1em;
-    min-width: 24em;
-    min-height: 17em;
-    padding: 2em;
-    border-radius: 5em;
-    text-align: center;
-    }*/
 
 
 footer {

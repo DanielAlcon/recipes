@@ -2,7 +2,7 @@ var recipeId = "";
 var recipe;
 
 
-$(".recipeInfo").click(function(e){
+$(".moreInfo").click(function(e){
 	e.stopPropagation();
 	recipeId = this.id;
 	recipeMoreInfo();
@@ -52,13 +52,13 @@ function appendRecipe(recipe){
 		var sourceSiteUrl = recipe.source.sourceSiteUrl;
 		var totalTime = recipe.totalTime;
 
-		var recipeInfo = '<div id="col-sm-6 col-md-4 recipeInfo"><div class="thumbnail"><h2 id="recipeInfoName">' + 
+		var recipeInfo = '<div class="recipeInfo thumbnail"><h2 id="recipeInfoName">' + 
 		name + '</h2><img class="img-rounded" src="' + image + '"><div class="description"><p></span>Servings: ' + servings + 
 		'.</span><span> Cooking time: ' + totalTime + 
 		'</span>.<span class="course"> ' + course + '</span></p><h5>Ingredients:</h5><ul class="recipeInfoIngredients"></ul>' 
 		+ '<p><span class="recipeInfoRating"></span></p>' +
 		'<p>Source: ' + sourceDisplayName + '</p><a href="'+sourceRecipeUrl+
-		'">' + sourceRecipeUrl + '</a></div></div></div>';
+		'">' + sourceRecipeUrl + '</a></div></div>';
 
 		$('.recipe-more-info').append(recipeInfo);
 

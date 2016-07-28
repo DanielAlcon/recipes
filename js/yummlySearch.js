@@ -78,7 +78,7 @@ function appendRecipesList(recipes){
 		'"><h5 class="name">' + 
 		recipes[j].recipeName + '</h5><h6 class="recipeSource">By: ' + 
 		recipes[j].sourceDisplayName + 
-		'</h6><p><a class="btn btn-info recipeInfo" href="#/" id="' 
+		'</h6><p><a class="btn btn-info moreInfo" href="#/" id="' 
 		+ recipes[j].id +'"role="button">More info</a></p></div></div>';
 		$('#searchResults').append(recipeCard);
 	}
