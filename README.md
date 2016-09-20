@@ -1,5 +1,6 @@
 # recipes
 
+
 Final project of the Generation-Sevilla '16 course: Recipes website.
 
 The project:
@@ -31,3 +32,6 @@ Specialized in Frontend Web Development
 - jQuery.
 - TDD with Jasmine.
 - AngularJS.
+
+## If you want to see it in action check out this video:
+https://youtu.be/bCMoO-1yYoU
